@@ -1,0 +1,38 @@
+.presente {
+    display: flex;
+    /* usamos o flex direction para mudar a visualicao */
+    flex-direction: column;
+    /* usamos o align-items para alinhar no eixo da caixa*/
+    align-items: center;
+    /* como estamos trabalhando com position relative é preciso aplicar um relative dentro da div principal*/
+    position: relative;
+}
+
+.tampa {
+    width: 100px;
+    height: 25px;
+    background-color: #7aa944;
+}
+
+.caixa {
+    width: 90px;
+    height: 60px;
+    background-color: #5c7e32;
+}
+
+.laco_vertical {
+    /* aqui precisamos trabalhar com posicionamento absoluto */
+    position: absolute;
+    width: 15px;
+    height: 85px;
+    background-color: red;
+}
+
+.laco_horizontal {
+    /* aqui precisamos trabalhar com posicionamento absoluto */
+    position: absolute;
+    top: 40px;
+    width: 90px;
+    height: 15px;
+    background-color: red;
+}
