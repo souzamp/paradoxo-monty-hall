@@ -1,4 +1,4 @@
-export default class Porta {
+export default class PortaModel {
     // # usamos para definir que o atributo é privado em javascript
     // estamos definiando nossos atributos
     #numero: number
@@ -7,7 +7,7 @@ export default class Porta {
     #aberta: boolean
 
     // vamos criar nosso construtor de classe
-    constructor(numero, temPresente = false, selecionada = false, aberta = false) {
+    constructor(numero: number, temPresente = false, selecionada = false, aberta = false) {
         this.#numero = numero
         this.#temPresente = temPresente
         this.#selecionada = selecionada
@@ -37,16 +37,16 @@ export default class Porta {
 
         // para não alterar o estado da nossa instância vamos retornar uma nova apenas com a
         // modificacao que fizemos
-        return new Porta(this.numero, this.temPresente, selecionada, this.aberta)
+        return new PortaModel(this.#numero, this.#temPresente, selecionada, this.#aberta)
     }
 
     desmarcarPorta() {
         const selecionada = false
-        return new Porta(this.numero, this.temPresente, selecionada, this.aberta)
+        return new PortaModel(this.#numero, this.#temPresente, selecionada, this.#aberta)
     }
 
     abrir() {
         const aberta = true
-        return new Porta(this.numero, this.temPresente, this.selecionada, aberta)
+        return new PortaModel(this.#numero, this.#temPresente, this.#selecionada, aberta)
     }
 }
