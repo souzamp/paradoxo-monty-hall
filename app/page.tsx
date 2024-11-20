@@ -4,19 +4,30 @@ import { useState } from "react";
 import Porta from "../components/Porta";
 import PortaModel from "../model/porta";
 
+import { criarPortas, atualizarPortas } from "../functions/portas";
+
 export default function Home() {
 
-  //estamos definindo o estado da nossa porta
-  const [p1, setP1] = useState(new PortaModel(1))
+  // estamos criando uma constante chamando nossa função responsavel por crias
+  // de acordo o número que passamos e escolhendo em qual porta o presente vai está
+  const [portas, setPorta] = useState(criarPortas(3, 2))
+
+
+  // funcao que renderiza as portas na tela
+  function renderizarPortas() {
+    return portas.map(porta => {
+      return <Porta
+        key={porta.numero}
+        value={porta}
+        onChange={novaPorta => setPorta(atualizarPortas(portas, novaPorta))} />
+    })
+  }
 
   return (
     <div style={{ display: "flex" }}>
-      <Porta
-        value={p1}
-        
-        //aqui estamos chamando a nova propriedade para alternar a selecao
-        onChange={novaPorta => setP1(novaPorta)}
-      />
+
+      {/* chamamos a funcao de renderizacao dentro da Div */}
+      {renderizarPortas()}
     </div>
   );
 }
