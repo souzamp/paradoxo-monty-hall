@@ -31,6 +31,10 @@ export default class PortaModel {
         return this.#aberta
     }
 
+    get fechada() {
+        return !this.aberta
+    }
+
     alternarSelecao() {
         // estamos alterando o valor selecionado
         const selecionada = !this.#selecionada

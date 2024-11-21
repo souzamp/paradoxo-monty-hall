@@ -1,6 +1,8 @@
 import PortaModel from "../model/porta";
 import styles from "../styles/Porta.module.css";
 
+import Presente from './Presente'
+
 interface PortaProps {
     value: PortaModel
 
@@ -33,7 +35,7 @@ export default function Porta(props: PortaProps) {
                 <div className={styles.marcaneta}
                     // 8 passo - adicionar um evento ao clicarmos na macaneta
                     onClick={abrir}
-                    ></div>
+                ></div>
             </div>
         )
     }
@@ -43,7 +45,8 @@ export default function Porta(props: PortaProps) {
         <div className={styles.area} onClick={alternarSelecao}>
             <div className={`${styles.grade} ${selecionada}`}>
                 {/* 6 passo - estamos trabalhando com renderizacao condicional */}
-                {porta.aberta ? false : renderizarPorta()}
+                {porta.fechada ? renderizarPorta() :
+                    porta.temPresente ? <Presente /> : false}
             </div>
 
             <div className={styles.piso}></div>

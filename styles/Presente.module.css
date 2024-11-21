@@ -6,6 +6,7 @@
     align-items: center;
     /* como estamos trabalhando com position relative é preciso aplicar um relative dentro da div principal*/
     position: relative;
+    margin-bottom: 50%;
 }
 
 .tampa {
