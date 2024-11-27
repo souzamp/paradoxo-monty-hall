@@ -18,9 +18,12 @@ export function criarPortas(qtde: number, selecionada: number): PortaModel[] {
 // funcao responsavel por alterar a porta ao mudarmos de porta selecionada
 // que tem 2 parametros um array de PortaModel[] e a porta modificada, retornando um array PortaModel[]
 export function atualizarPortas(portas: PortaModel[], portaModifiada: PortaModel): PortaModel[]{
+    console.log("Chegou!")
     return portas.map(portAtual => {
         const portaIgualModificada = portAtual.numero === portaModifiada.numero
 
+        // TODO: 
+        // 
         if(portaIgualModificada){
             return portaModifiada
         } else {
